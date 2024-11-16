@@ -4,10 +4,10 @@ spring:
   profiles:
     active: ${ENV:dev}
   datasource:
-    database: test_db
-    url: jdbc:postgresql://localhost:5432/test_db
-    username: root
-    password: 12345
+    database: ${DB_DATABASE}
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
