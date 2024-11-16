@@ -16,12 +16,12 @@ public class UserService {
         return repository.findAll();
     }
 
-    public String addUser() {
+    public String addUser(RegisterRequest request) {
         try {
             User user = User.builder()
-                    .name("John Doe")
-                    .email("doe@mail.com")
-                    .password("12345")
+                    .name(request.name())
+                    .email(request.email())
+                    .password(request.password())
                     .role(Role.USER)
                     .build();
 

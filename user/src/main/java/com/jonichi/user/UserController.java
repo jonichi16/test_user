@@ -22,7 +22,9 @@ public class UserController {
     public String addUser(
             @RequestBody RegisterRequest request
     ) {
-        return service.addUser();
+
+        return service.addUser(request);
+
     }
 
 }
