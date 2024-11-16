@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: envelope
+  profiles:
+    active: ${ENV:dev}
+  datasource:
+    database: test_db
+    url: jdbc:postgresql://localhost:5432/test_db
+    username: root
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/changelog/changelog-root.yml
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+server:
+  error:
+    include-message: always
